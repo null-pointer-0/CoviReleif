@@ -5,12 +5,13 @@ import androidx.viewpager.widget.ViewPager;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.widget.SearchView;
 
+import com.example.covirelief.Activities.EnterMobile;
+import com.example.covirelief.Activities.Messages;
+import com.example.covirelief.Activities.MyPost;
 import com.example.covirelief.Adapter.FragmentAdapter;
 import com.example.covirelief.Fragment.avails;
 import com.example.covirelief.Fragment.need;
@@ -55,7 +56,7 @@ public class MainActivity extends AppCompatActivity {
            FirebaseAuth.getInstance().signOut();
            sp.setID(null);
            sp.setLogIn(false);
-           Intent intent = new Intent(this,EnterMobile.class);
+           Intent intent = new Intent(this, EnterMobile.class);
            startActivity(intent);
            finish();
        }

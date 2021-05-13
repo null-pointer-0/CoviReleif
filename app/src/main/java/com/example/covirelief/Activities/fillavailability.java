@@ -1,8 +1,9 @@
-package com.example.covirelief;
+package com.example.covirelief.Activities;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -13,6 +14,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.covirelief.Model.AvailEntry;
+import com.example.covirelief.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
@@ -29,9 +31,10 @@ public class fillavailability extends AppCompatActivity {
     EditText contact;
     EditText descrip;
     Button submit;
-    FirebaseDatabase firedb = FirebaseDatabase.getInstance("https://covirelief-default-rtdb.firebaseio.com/");
+    FirebaseDatabase firedb = FirebaseDatabase.getInstance(getString(R.string.DataBaseRef));
     FirebaseFirestore firestore = FirebaseFirestore.getInstance();
-    String meds[] = {"plasma","remdesivir","oxygen","bed","fabiflu"};
+    final String meds[] = {"plasma","remdesivir","oxygen","bed","fabiflu"};
+    @SuppressLint("SetTextI18n")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -59,7 +62,7 @@ public class fillavailability extends AppCompatActivity {
             address.setEnabled(true);
             contact.setEnabled(true);
             descrip.setEnabled(true);
-            top.setText("Please provide verified information only.");
+            top.setText(R.string.Constant);
             bottom.setVisibility(View.VISIBLE);
             onSubmitClick();
         }

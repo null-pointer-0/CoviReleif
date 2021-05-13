@@ -1,4 +1,4 @@
-package com.example.covirelief;
+package com.example.covirelief.Activities;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -10,6 +10,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.covirelief.MainActivity;
+import com.example.covirelief.R;
+import com.example.covirelief.SharedPreference;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.FirebaseException;
@@ -87,7 +90,7 @@ public class verifyuser extends AppCompatActivity {
                         {
                             sp.setID(mAuth.getCurrentUser().getUid());
                             sp.setLogIn(true);
-                            startActivity(new Intent(verifyuser.this,MainActivity.class));
+                            startActivity(new Intent(verifyuser.this, MainActivity.class));
                             finish();
 
                         } else {

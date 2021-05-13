@@ -1,12 +1,10 @@
-package com.example.covirelief;
+package com.example.covirelief.Activities;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.webkit.WebChromeClient;
 import android.webkit.WebView;
@@ -17,17 +15,9 @@ import android.widget.ProgressBar;
 import android.widget.RadioButton;
 import android.widget.Toast;
 
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.FirebaseException;
-import com.google.firebase.auth.AuthResult;
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException;
-import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.auth.PhoneAuthCredential;
-import com.google.firebase.auth.PhoneAuthProvider;
-
-import java.util.concurrent.TimeUnit;
+import com.example.covirelief.MainActivity;
+import com.example.covirelief.R;
+import com.example.covirelief.SharedPreference;
 
 public class EnterMobile extends AppCompatActivity {
 
@@ -57,7 +47,7 @@ public class EnterMobile extends AppCompatActivity {
         view_pdf = findViewById(R.id.viewbt);
         pdf.setVisibility(View.GONE);
         if(sp.getLogin()){
-            Intent intent = new Intent(getApplicationContext(),MainActivity.class);
+            Intent intent = new Intent(getApplicationContext(), MainActivity.class);
 //            intent.putExtra("name",one);
             startActivity(intent);
             finish();
@@ -74,7 +64,7 @@ public class EnterMobile extends AppCompatActivity {
                 total.setVisibility(View.GONE);
                 pdf.requestFocus();
                 pdf.getSettings().setJavaScriptEnabled(true);
-                String url = "https://drive.google.com/file/d/1WiKutff6WWw0Gu_gz65_owrq4IvzLSIh/view";
+                String url = getString(R.string.TandC_file);
                 pdf.loadUrl(url);
                 pdf.setWebViewClient(new WebViewClient() {
                     @Override
@@ -103,7 +93,7 @@ public class EnterMobile extends AppCompatActivity {
                     if(agree.isChecked()) {
                         String one = name.getText().toString();
                         String two = number.getText().toString();
-                        String fin_two = "+91" + two;
+                        String fin_two = getString(R.string.CountryCode) + two;
                         if (one.isEmpty()) {
                             Toast.makeText(getApplicationContext(), "Enter name", Toast.LENGTH_SHORT).show();
                         } else if (two.isEmpty()) {
@@ -118,7 +108,7 @@ public class EnterMobile extends AppCompatActivity {
                             finish();
                         }
                     }else{
-                        Toast.makeText(getApplicationContext(),"Agree with terms and conditions to proceed.",Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), getString(R.string.Agree),Toast.LENGTH_SHORT).show();
                     }
                 }
             });

@@ -12,20 +12,20 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.CoviRelief">
-        <activity android:name=".Messages"/>
-        <activity android:name=".MyPost" >
+        <activity android:name=".Activities.Messages"/>
+        <activity android:name=".Activities.MyPost" >
             android:screenOrientation="portrait"
         </activity>
-        <activity android:name=".fillavailability" >
+        <activity android:name=".Activities.fillavailability" >
             android:screenOrientation="portrait"
         </activity>
-        <activity android:name=".fillneeds" >
+        <activity android:name=".Activities.fillneeds" >
             android:screenOrientation="portrait"
         </activity>
-        <activity android:name=".verifyuser" >
+        <activity android:name=".Activities.verifyuser" >
             android:screenOrientation="portrait"
         </activity>
-        <activity android:name=".EnterMobile">
+        <activity android:name=".Activities.EnterMobile">
             android:screenOrientation="portrait"
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

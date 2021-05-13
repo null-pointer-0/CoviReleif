@@ -1,4 +1,4 @@
-package com.example.covirelief;
+package com.example.covirelief.Activities;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -13,6 +13,7 @@ import android.widget.ProgressBar;
 
 import com.example.covirelief.Adapter.MessageAdapter;
 import com.example.covirelief.Model.Message;
+import com.example.covirelief.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;

@@ -1,4 +1,4 @@
-package com.example.covirelief;
+package com.example.covirelief.Activities;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -17,6 +17,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.covirelief.Model.Entry;
+import com.example.covirelief.R;
+import com.example.covirelief.SharedPreference;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
@@ -40,7 +42,7 @@ public class fillneeds extends AppCompatActivity {
     EditText p_time;
     EditText p_descrip;
     EditText p_hospital;
-    FirebaseDatabase firedb = FirebaseDatabase.getInstance("https://covirelief-default-rtdb.firebaseio.com/");
+    FirebaseDatabase firedb = FirebaseDatabase.getInstance(getString(R.string.DataBaseRef));
     FirebaseFirestore firestore = FirebaseFirestore.getInstance();
     Button bt;
     ProgressBar pg;
@@ -74,7 +76,7 @@ public class fillneeds extends AppCompatActivity {
             right.setVisibility(View.GONE);
             showIntentData();
         }else{
-            top.setText("Please provide correct information");
+            top.setText(R.string.Constant2);
             bottom.setVisibility(View.VISIBLE);
             p_name.setEnabled(true);
             p_needs.setEnabled(true);

@@ -2,4 +2,10 @@
     <string name="app_name">CoviRelief</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="TandC_file">https://drive.google.com/file/d/1WiKutff6WWw0Gu_gz65_owrq4IvzLSIh/view</string>
+    <string name="Agree">Agree with terms and conditions to proceed.</string>
+    <string name="CountryCode">+91</string>
+    <string name="DataBaseRef">https://covirelief-default-rtdb.firebaseio.com/</string>
+    <string name="Constant">Please provide verified information only.</string>
+    <string name="Constant2">Please provide correct information</string>
 </resources>

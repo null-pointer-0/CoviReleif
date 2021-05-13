@@ -37,7 +37,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
     List<Entry> list;
     List<AvailEntry> list2;
     Context context;
-    FirebaseDatabase firedb = FirebaseDatabase.getInstance("https://covirelief-default-rtdb.firebaseio.com/");
+    FirebaseDatabase firedb;
     FirebaseAuth mAuth = FirebaseAuth.getInstance();
     FirebaseFirestore firestore = FirebaseFirestore.getInstance();
     SharedPreference sp;
@@ -46,6 +46,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
         this.context = context;
         this.list = list;
         sp = new SharedPreference(context);
+        firedb = FirebaseDatabase.getInstance(context.getString(R.string.DataBaseRef));
     }
     public MyAdapter(String Tag,List<AvailEntry> list2, Context context){
         tag = Tag;

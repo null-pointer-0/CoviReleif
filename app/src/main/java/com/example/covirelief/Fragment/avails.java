@@ -1,7 +1,6 @@
 package com.example.covirelief.Fragment;
 
 import android.content.Intent;
-import android.media.Image;
 import android.net.Uri;
 import android.os.Bundle;
 
@@ -16,7 +15,6 @@ import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
 import android.view.LayoutInflater;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
@@ -27,17 +25,13 @@ import android.widget.TextView;
 
 import com.example.covirelief.Model.AvailEntry;
 import com.example.covirelief.R;
-import com.example.covirelief.fillavailability;
-import com.example.covirelief.fillneeds;
+import com.example.covirelief.Activities.fillavailability;
 import com.firebase.ui.firestore.paging.FirestorePagingAdapter;
 import com.firebase.ui.firestore.paging.FirestorePagingOptions;
 import com.firebase.ui.firestore.paging.LoadingState;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
-import com.google.firebase.firestore.FirebaseFirestoreException;
 import com.google.firebase.firestore.Query;
-import com.google.firebase.firestore.QuerySnapshot;
 
 import static android.view.View.GONE;
 import static android.view.View.VISIBLE;
@@ -193,17 +187,12 @@ public class avails extends Fragment {
                 super.onLoadingStateChanged(state);
                 switch (state){
                     case LOADING_MORE:
-                        Log.e("PAGING_LOG","Loading more");
-                        pg_bar.setVisibility(VISIBLE);
-                        break;
                     case LOADING_INITIAL:
-                        Log.e("PAGING_LOG","Loading initial");
                         pg_bar.setVisibility(VISIBLE);
                         break;
                     case LOADED:
                     case ERROR:
                     case FINISHED:
-                        Log.e("PAGING_LOG","item loaded :"+getItemCount());
                         pg_bar.setVisibility(GONE);
                         break;
                 }

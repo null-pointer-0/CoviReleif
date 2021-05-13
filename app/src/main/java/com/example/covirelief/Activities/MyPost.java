@@ -1,4 +1,4 @@
-package com.example.covirelief;
+package com.example.covirelief.Activities;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -12,6 +12,7 @@ import android.widget.ProgressBar;
 import com.example.covirelief.Adapter.MyAdapter;
 import com.example.covirelief.Model.AvailEntry;
 import com.example.covirelief.Model.Entry;
+import com.example.covirelief.R;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -24,7 +25,7 @@ import java.util.List;
 
 public class MyPost extends AppCompatActivity {
 
-    FirebaseDatabase firedb = FirebaseDatabase.getInstance("https://covirelief-default-rtdb.firebaseio.com/");
+    FirebaseDatabase firedb = FirebaseDatabase.getInstance(getString(R.string.DataBaseRef));
     MyAdapter adapter;
     List<AvailEntry> list2 = new LinkedList<>();
     List<Entry> list = new LinkedList<>();
